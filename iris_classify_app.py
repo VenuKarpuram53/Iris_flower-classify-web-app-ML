@@ -54,7 +54,7 @@ def main():
         elif option=='Decision Tree':
             st.success(classify(decision_model.predict(inputs)))
         else:
-           st.success(classify(svm.predict(inputs)))
+           st.success(classify(svc_model.predict(inputs)))
 
 
 if __name__=='__main__':
