@@ -21,7 +21,7 @@ y=iris.target
 x_train,x_test,y_train,y_test=train_test_split(X,y)
 lin_reg=LinearRegression()
 log_reg=LogisticRegression()
-upport_VM=SVC(kernel='linear',probability=True)
+support_VM=SVC(kernel='linear',probability=True)
 decision_tree = DecisionTreeClassifier(max_depth = 6,random_state = 0,criterion = "entropy")
 
 lin_reg=lin_reg.fit(x_train,y_train)
