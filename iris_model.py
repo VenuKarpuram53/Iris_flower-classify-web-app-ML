@@ -9,7 +9,7 @@ from sklearn import datasets
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression,LogisticRegression
-from sklearn.svm import SVC
+from sklearn.svm import SVC,LinearSVC
 from sklearn.tree import DecisionTreeClassifier
 import pickle
 
@@ -21,7 +21,7 @@ y=iris.target
 x_train,x_test,y_train,y_test=train_test_split(X,y)
 lin_reg=LinearRegression()
 log_reg=LogisticRegression()
-support_VM=SVC()
+upport_VM=SVC(kernel='linear',probability=True)
 decision_tree = DecisionTreeClassifier(max_depth = 6,random_state = 0,criterion = "entropy")
 
 lin_reg=lin_reg.fit(x_train,y_train)
