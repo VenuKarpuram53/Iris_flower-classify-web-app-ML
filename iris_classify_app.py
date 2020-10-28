@@ -8,7 +8,7 @@ Created on Sat Oct 24 11:24:26 2020
 """
 Created on Sat Oct 24 11:24:04 2020
 
-@authors: Thanvika, Venu, Yoshitha.
+@developed by: Thanvika, Venu, Yoshitha.
 """
 import streamlit as st
 import pickle
@@ -17,8 +17,7 @@ import pickle
 
 
 neuron_model=pickle.load(open('neuron_model.pkl','rb'))
-log_model=pickle.load(open('log_model.pkl','rb'))
-svc_model=pickle.load(open('svc_model.pkl','rb'))
+kmc_model=pickle.load(open('kmc_model.pkl','rb'))
 decision_model=pickle.load(open('decision_model.pkl','rb'))
 
 
@@ -38,7 +37,7 @@ def main():
 
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-    activities=['Neural Network','Logistic Regression','SVM','Decision Tree']
+    activities=['Neural Network','K-Means Clustering','Decision Tree']
     option=st.sidebar.selectbox('Which model would you like to use?',activities)
     st.subheader(option)
     sl=st.slider('Select Sepal Length', 0.0, 10.0)
@@ -49,12 +48,10 @@ def main():
     if st.button('Classify'):
         if option=='Neural Network':
             st.success(classify(neuron_model.predict(inputs)))
-        elif option=='Logistic Regression':
-            st.success(classify(log_model.predict(inputs)))
+        elif option=='K-Means Clustering':
+            st.success(classify(kmc_model.predict(inputs)))
         elif option=='Decision Tree':
             st.success(classify(decision_model.predict(inputs)))
-        else:
-           st.success(classify(svc_model.predict(inputs)))
 
 
 if __name__=='__main__':
