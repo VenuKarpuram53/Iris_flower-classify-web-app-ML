@@ -6,9 +6,10 @@ Created on Sat Oct 24 11:24:26 2020
 """
 # -*- coding: utf-8 -*-
 """
-Created on Sat Oct 24 11:24:04 2020
+Created on Sat Oct 24 2020;
+developers: Thanvika, Venu, Yoshitha.
 
-@developed by: Thanvika, Venu, Yoshitha.
+guided by: Dr.Kasi Prasad
 """
 import streamlit as st
 import pickle
